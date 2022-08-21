@@ -2,10 +2,11 @@ import React, { Fragment, useEffect, useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { LayoutContext } from "../layout";
 import { subTotal, quantity, totalCost } from "../partials/Mixins";
-import Web3 from "web3";
+
 import { cartListProduct } from "../partials/FetchApi";
 import { getBrainTreeToken, getPaymentProcess } from "./FetchApi";
 import { fetchData, fetchbrainTree, pay } from "./Action";
+
 import DropIn from "braintree-web-drop-in-react";
 
 const apiURL = process.env.REACT_APP_API_URL;
@@ -27,7 +28,7 @@ export const CheckoutComponent = (props) => {
     fetchData(cartListProduct, dispatch);
     fetchbrainTree(getBrainTreeToken, setState);
 
-    //   // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (data.loading) {
@@ -112,55 +113,51 @@ export const CheckoutComponent = (props) => {
                       placeholder="+880"
                     />
                   </div>
-
+                  <DropIn
+                    options={{
+                      authorization: state.clientToken,
+                      paypal: {
+                        flow: "vault",
+                      },
+                    }}
+                    onInstance={(instance) => (state.instance = instance)}
+                  />
                   <div
-                    type="button"
+                    onClick={(e) =>
+                      pay(
+                        data,
+                        dispatch,
+                        state,
+                        setState,
+                        getPaymentProcess,
+                        totalCost,
+                        history
+                      )
+                    }
                     className="w-full px-4 py-2 text-center text-white font-semibold cursor-pointer"
                     style={{ background: "#303031" }}
-                    onClick={async (e) => {
-                      let web3;
-                      if (window.ethereum) {
-                        web3 = new Web3(window.ethereum);
-                        try {
-                          await window.ethereum.enable();
-                        } catch (err) {
-                          console.log("Web3 not triggered", err);
-                        }
-                      } else if (window.web3) {
-                        web3 = new Web3(window.web3.ethereum);
-                      } else {
-                        console.log(
-                          "No Metamask (or other Web3 Provider) installed"
-                        );
-                      }
-                      const paymentAddress =
-                        "0x192c96bfee59158441f26101b2db1af3b07feb40";
-                      const amountEth = 1;
-                      web3.eth.getAccounts(function (error, result) {
-                        web3.eth.sendTransaction(
-                          {
-                            from: "0x69cE0e1c26BB8Fcc34FcF15D126f4B637Bfe718A",
-                            to: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
-                            value: "10",
-                            data: "0xdf",
-                          },
-                          function (err, transactionHash) {
-                            if (!err) console.log(transactionHash + " success");
-                            // const abc = transactionHash;
-                            // await
-                            
-                          }
-                        );
-                      });
-                    }}
                   >
-                    Pay
+                    Pay now
                   </div>
-                  <div id="status"></div>
                 </div>
               </Fragment>
             ) : (
-              <div className="flex items-center justify-center py-12"></div>
+              <div className="flex items-center justify-center py-12">
+                <svg
+                  className="w-12 h-12 animate-spin text-gray-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                  ></path>
+                </svg>
+              </div>
             )}
           </div>
         </div>
@@ -193,13 +190,13 @@ const CheckoutProducts = ({ products }) => {
                     {product.pName}
                   </div>
                   <div className="md:ml-6 font-semibold text-gray-600 text-sm">
-                    Price : ₹{product.pPrice}.00{" "}
+                    Price : ${product.pPrice}.00{" "}
                   </div>
                   <div className="md:ml-6 font-semibold text-gray-600 text-sm">
                     Quantitiy : {quantity(product._id)}
                   </div>
                   <div className="font-semibold text-gray-600 text-sm">
-                    Subtotal : ₹{subTotal(product._id, product.pPrice)}.00
+                    Subtotal : ${subTotal(product._id, product.pPrice)}.00
                   </div>
                 </div>
               </div>
@@ -212,7 +209,5 @@ const CheckoutProducts = ({ products }) => {
     </Fragment>
   );
 };
-
-async function connectMetamask() {}
 
 export default CheckoutProducts;
