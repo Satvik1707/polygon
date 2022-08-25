@@ -146,8 +146,7 @@ export const CheckoutComponent = (props) => {
                           },
                           function (err, transactionHash) {
                             if (!err) console.log(transactionHash + " success");
-                            // const abc = transactionHash;
-                            // await
+                            
                             
                           }
                         );
