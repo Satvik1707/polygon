@@ -34,7 +34,7 @@ export const CheckoutComponent = (props) => {
     return (
       <div className="flex items-center justify-center h-screen">
         <svg
-          className="w-12 h-12 animate-spin text-gray-600"
+          className="w-12 h-12 animate-spin text-black"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -47,7 +47,7 @@ export const CheckoutComponent = (props) => {
             d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
           ></path>
         </svg>
-        Please wait untill finish
+        Loading
       </div>
     );
   }
@@ -76,7 +76,7 @@ export const CheckoutComponent = (props) => {
                   )}
                   <div className="flex flex-col py-2">
                     <label htmlFor="address" className="pb-2">
-                      Dalivery Address
+                      Delivery Address
                     </label>
                     <input
                       value={state.address}
@@ -115,6 +115,7 @@ export const CheckoutComponent = (props) => {
 
                   <div
                     type="button"
+                    
                     className="w-full px-4 py-2 text-center text-white font-semibold cursor-pointer"
                     style={{ background: "#303031" }}
                     onClick={async (e) => {
@@ -145,9 +146,7 @@ export const CheckoutComponent = (props) => {
                             data: "0xdf",
                           },
                           function (err, transactionHash) {
-                            if (!err) console.log(transactionHash + " success");
-                            
-                            
+                            if (!err) alert('Order placed success')
                           }
                         );
                       });
@@ -191,13 +190,13 @@ const CheckoutProducts = ({ products }) => {
                   <div className="text-lg md:ml-6 truncate">
                     {product.pName}
                   </div>
-                  <div className="md:ml-6 font-semibold text-gray-600 text-sm">
+                  <div className="md:ml-6 font-semibold text-black text-sm">
                     Price : ₹{product.pPrice}.00{" "}
                   </div>
-                  <div className="md:ml-6 font-semibold text-gray-600 text-sm">
+                  <div className="md:ml-6 font-semibold text-black text-sm">
                     Quantitiy : {quantity(product._id)}
                   </div>
-                  <div className="font-semibold text-gray-600 text-sm">
+                  <div className="font-semibold text-black text-sm">
                     Subtotal : ₹{subTotal(product._id, product.pPrice)}.00
                   </div>
                 </div>

@@ -10,7 +10,7 @@ const AdminSidebar = (props) => {
       <div
         style={{ boxShadow: "1px 1px 8px 0.2px #aaaaaa" }}
         id="sidebar"
-        className="hidden md:block sticky top-0 left-0 h-screen md:w-3/12 lg:w-2/12 sidebarShadow bg-white text-gray-600"
+        className="hidden md:block sticky top-0 left-0 h-screen md:w-3/12 lg:w-2/12 sidebarShadow bg-white text-black"
       >
         {/* <div
           onClick={(e) => history.push("/admin/dashboard")}
@@ -22,7 +22,7 @@ const AdminSidebar = (props) => {
         >
           <span>
             <svg
-              className="w-8 h-8 text-gray-600 hover:text-gray-800"
+              className="w-8 h-8 text-black hover:text-gray-800"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -49,7 +49,7 @@ const AdminSidebar = (props) => {
         >
           <span>
             <svg
-              className="w-8 h-8 text-gray-600 hover:text-gray-800"
+              className="w-8 h-8 text-black hover:text-gray-800"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -76,7 +76,7 @@ const AdminSidebar = (props) => {
         >
           <span>
             <svg
-              className="w-8 h-8 text-gray-600 hover:text-gray-800"
+              className="w-8 h-8 text-black hover:text-gray-800"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -103,7 +103,7 @@ const AdminSidebar = (props) => {
         >
           <span>
             <svg
-              className="w-8 h-8 text-gray-600 hover:text-gray-800"
+              className="w-8 h-8 text-black hover:text-gray-800"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

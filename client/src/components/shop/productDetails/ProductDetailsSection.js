@@ -72,7 +72,7 @@ const ProductDetailsSection = (props) => {
     return (
       <div className="col-span-2 md:col-span-3 lg:col-span-4 flex items-center justify-center h-screen">
         <svg
-          className="w-12 h-12 animate-spin text-gray-600"
+          className="w-12 h-12 animate-spin text-black"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -160,7 +160,7 @@ const ProductDetailsSection = (props) => {
                 </span>
               </div>
             </div>
-            <div className="my-4 md:my-6 text-gray-600">
+            <div className="my-4 md:my-6 text-black">
               {sProduct.pDescription}
             </div>
             <div className="my-4 md:my-6">

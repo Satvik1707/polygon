@@ -18,7 +18,7 @@ const AdminNavber = (props) => {
         <div className="hidden lg:block lg:flex lg:items-center lg:space-x-4 mr-32">
           <span>
             {/* <svg
-              className="w-8 h-8 cursor-pointer text-gray-600"
+              className="w-8 h-8 cursor-pointer text-black"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -47,7 +47,7 @@ const AdminNavber = (props) => {
         <div className="lg:hidden flex items-center">
           {/* <svg
             id="hamburgerBtn"
-            className="lg:hidden w-8 h-8 cursor-pointer text-gray-600"
+            className="lg:hidden w-8 h-8 cursor-pointer text-black"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -80,7 +80,7 @@ const AdminNavber = (props) => {
             title="Logout"
           >
             <svg
-              className="cursor-pointer w-8 h-8 text-gray-600 hover:text-gray-800"
+              className="cursor-pointer w-8 h-8 text-black hover:text-gray-800"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

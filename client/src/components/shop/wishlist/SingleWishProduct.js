@@ -64,7 +64,7 @@ const Product = () => {
                   </div>
                 </div>
                 <div className="md:w-1/2 md:flex md:items-center md:justify-around">
-                  <div className="font-semibold text-gray-600">
+                  <div className="font-semibold text-black">
                   ₹{product.pPrice}.00
                   </div>
                   {product.pQuantity > 0 ? (

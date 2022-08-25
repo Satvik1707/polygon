@@ -52,53 +52,6 @@ const CategoryList = () => {
   );
 };
 
-const FilterList = () => {
-  const { data, dispatch } = useContext(HomeContext);
-  const [range, setRange] = useState(0);
-
-  const rangeHandle = (e) => {
-    setRange(e.target.value);
-    fetchData(e.target.value);
-  };
-
-  const fetchData = async (price) => {
-    if (price === "all") {
-      try {
-        let responseData = await getAllProduct();
-        if (responseData && responseData.Products) {
-          dispatch({ type: "setProducts", payload: responseData.Products });
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    } else {
-      dispatch({ type: "loading", payload: true });
-      try {
-        setTimeout(async () => {
-          let responseData = await productByPrice(price);
-          if (responseData && responseData.Products) {
-            console.log(responseData.Products);
-            dispatch({ type: "setProducts", payload: responseData.Products });
-            dispatch({ type: "loading", payload: false });
-          }
-        }, 700);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-  };
-
-  const closeFilterBar = () => {
-    fetchData("all");
-    dispatch({ type: "filterListDropdown", payload: !data.filterListDropdown });
-    setRange(0);
-  };
-
-  return (
-    <div className={`${data.filterListDropdown ? "" : "hidden"} my-4`}></div>
-  );
-};
-
 const Search = () => {
   const { data, dispatch } = useContext(HomeContext);
   const [search, setSearch] = useState("");
@@ -173,7 +126,7 @@ const ProductCategoryDropdown = (props) => {
   return (
     <Fragment>
       <CategoryList />
-      <FilterList />
+
       <Search />
     </Fragment>
   );

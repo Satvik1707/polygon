@@ -219,7 +219,7 @@ const EditProductModal = (props) => {
               ) : (
                 ""
               )}
-              <span className="text-gray-600 text-xs">Must need 2 images</span>
+              <span className="text-black text-xs">Must need 2 images</span>
               <input
                 onChange={(e) =>
                   setEditformdata({

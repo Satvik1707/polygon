@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import { getAllProduct } from "../../admin/products/FetchApi";
 import { HomeContext } from "./index";
 
-
 const apiURL = process.env.REACT_APP_API_URL;
 
 const SingleProduct = (props) => {
@@ -35,7 +34,7 @@ const SingleProduct = (props) => {
     return (
       <div className="col-span-2 md:col-span-3 lg:col-span-4 flex items-center justify-center py-24">
         <svg
-          className="w-12 h-12 animate-spin text-gray-600"
+          className="w-12 h-12 animate-spin text-black"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -57,23 +56,28 @@ const SingleProduct = (props) => {
         products.map((item, index) => {
           return (
             <Fragment key={index}>
-              <div className="relative col-span-1 m-2 p-5 border border-grey">
+              <div className="card-group">
+              <div className="card relative col-span-1 m-2 p-1 border w-auto h-100">
                 <img
                   onClick={(e) => history.push(`/products/${item._id}`)}
-                  className="w-full object-cover object-center cursor-pointer"
+                  className="card-img-top w-full object-cover object-center cursor-pointer"
                   src={`${apiURL}/uploads/products/${item.pImages[0]}`}
                   alt=""
                 />
-                <div className="flex items-center justify-between mt-2">
-                  <div className="text-gray-600 font-light truncate">
+                <div className="card-footer flex items-center justify-between mt-2">
+                  <div
+                    className="text-black truncate cursor-pointer"
+                    onClick={(e) => history.push(`/products/${item._id}`)}
+                  >
                     {item.pName}
                   </div>
-                  <div className="flex items-center space-x-1">
+                  <div className="card-footer flex items-center space-x-1">
                     <span>
-                    <div>₹{item.pPrice}.00</div>
+                      <div className="">₹{item.pPrice}.00</div>
                     </span>
                   </div>
-                </div>        
+                </div>
+              </div>
               </div>
             </Fragment>
           );

@@ -7,7 +7,7 @@ const SearchFilter = (props) => {
         <div className="bg-white border w-full md:w-6/12 lg:w-4/12 shadow-lg rounded-r flex items-center">
           <span className="py-2 px-3">
             <svg
-              className="w-6 h-6 text-gray-600"
+              className="w-6 h-6 text-black"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"

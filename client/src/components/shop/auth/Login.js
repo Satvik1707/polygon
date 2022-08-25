@@ -54,7 +54,7 @@ const Login = (props) => {
         <div className="flex flex-col">
           <label htmlFor="name">
             Username or email address
-            <span className="text-sm text-gray-600 ml-1">*</span>
+            <span className="text-sm text-black ml-1">*</span>
           </label>
           <input
             onChange={(e) => {
@@ -72,7 +72,7 @@ const Login = (props) => {
         </div>
         <div className="flex flex-col">
           <label htmlFor="password">
-            Password<span className="text-sm text-gray-600 ml-1">*</span>
+            Password<span className="text-sm text-black ml-1">*</span>
           </label>
           <input
             onChange={(e) => {
@@ -96,10 +96,10 @@ const Login = (props) => {
               className="px-4 py-2 focus:outline-none border mr-1"
             />
             <label htmlFor="rememberMe">
-              Remember me<span className="text-sm text-gray-600">*</span>
+              Remember me<span className="text-sm text-black">*</span>
             </label>
           </div>
-          <a className="block text-gray-600" href="/">
+          <a className="block text-black" href="/">
             Lost your password?
           </a>
         </div>

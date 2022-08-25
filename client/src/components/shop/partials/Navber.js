@@ -1,11 +1,10 @@
 import React, { Fragment, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import "./style.css";
-
 import { logout } from "./Action";
 import { LayoutContext } from "../index";
 import { isAdmin } from "../auth/fetchApi";
-
+// import logo from "../../../Products/logo";
 const Navber = (props) => {
   const history = useHistory();
   // const location = useLocation();
@@ -30,15 +29,17 @@ const Navber = (props) => {
   return (
     <Fragment>
       {/* Navber Section */}
-      <nav className="fixed top-0 w-full z-20 shadow-lg lg:shadow-none bg-white">
+      <nav className="Navbar fixed top-10 w-full z-20 shadow-lg lg:shadow-none ">
         <div className="m-4 md:mx-12 md:my-6 grid grid-cols-4 lg:grid-cols-3">
-          <div className="hidden lg:block col-span-1 flex text-gray-600 mt-1">
-
+          <div className="hidden lg:block col-span-1 flex">
+              <span>
+                <img src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Ministry_of_Agriculture_India.svg/1200px-Ministry_of_Agriculture_India.svg.png' height = '150px' width = '150px'/>
+              </span>
           </div>
-          <div className="col-span-2 lg:hidden flex justify-items-stretch	 items-center">
+          <div className="col-span-2 lg:hidden flex justify-items-stretch	items-center">
             <svg
               onClick={(e) => navberToggleOpen()}
-              className="col-span-1 lg:hidden w-8 h-8 cursor-pointer text-gray-600"
+              className="col-span-1 lg:hidden w-8 h-8 cursor-pointer text-black"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -67,7 +68,6 @@ const Navber = (props) => {
             Agrobuy
           </div>
           <div className="flex items-right col-span-2 lg:col-span-1 flex justify-end">
-         
             {localStorage.getItem("jwt") ? (
               <Fragment>
                 <div
@@ -75,7 +75,7 @@ const Navber = (props) => {
                   title="Logout"
                 >
                   <svg
-                    className="cursor-pointer w-8 h-8 text-gray-600 hover:text-gray-800"
+                    className="cursor-pointer w-8 h-8 text-black hover:text-gray-800"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -255,7 +255,7 @@ const Navber = (props) => {
                 title="Login"
               >
                 <svg
-                  className="w-8 h-8 text-gray-600 hover:text-gray-800"
+                  className="w-8 h-8 text-black hover:text-gray-800"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -277,7 +277,7 @@ const Navber = (props) => {
               title="Cart"
             >
               <svg
-                className="w-8 h-8 text-gray-600 hover:text-gray-800"
+                className="w-8 h-8 text-black hover:text-gray-800"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -303,12 +303,11 @@ const Navber = (props) => {
               : "hidden px-1 pb-2 md:pb-0 md:px-10 lg:hidden"
           }
         >
-          <div className="col-span-1 flex flex-col text-gray-600">
+          <div className="col-span-1 flex flex-col text-black">
             <span
               className="font-medium text-lg tracking-widest hover:text-gray-800 hover:bg-gray-200 px-3 py-2 rounded-lg cursor-pointer"
               onClick={(e) => history.push("/")}
-            >
-            </span>
+            ></span>
           </div>
         </div>
       </nav>

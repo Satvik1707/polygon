@@ -61,7 +61,7 @@ const SellTable = () => {
             )}
           </tbody>
         </table>
-        <div className="text-sm text-gray-600 mt-2">
+        <div className="text-sm text-black mt-2">
           Total{" "}
           {data.totalOrders.Orders !== undefined ? ordersList().length : 0}{" "}
           orders found

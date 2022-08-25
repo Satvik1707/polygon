@@ -93,7 +93,7 @@ const OrdersComponent = () => {
     return (
       <div className="w-full md:w-9/12 flex items-center justify-center py-24">
         <svg
-          className="w-12 h-12 animate-spin text-gray-600"
+          className="w-12 h-12 animate-spin text-black"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -137,7 +137,7 @@ const OrdersComponent = () => {
                 )}
               </tbody>
             </table>
-            <div className="text-sm text-gray-600 mt-2">
+            <div className="text-sm text-black mt-2">
               Total {orders && orders.length} order found
             </div>
           </div>

@@ -59,7 +59,7 @@ const ReviewForm = (props) => {
         <div className="mb-12 md:mx-16 lg:mx-20 xl:mx-24 flex flex-col">
           <div className="flex flex-col space-y-2">
             <span className="text-2xl font-medium">Add a review</span>
-            <span className="text-gray-600 text-sm">
+            <span className="text-black text-sm">
               Your email address will not be published. Required fields are
               marked *
             </span>
@@ -132,7 +132,7 @@ const ReviewForm = (props) => {
           <div className="space-y-4">
             <div className="flex flex-col">
               <label htmlFor="textArea">
-                Review <span className="text-sm text-gray-600">*</span>
+                Review <span className="text-sm text-black">*</span>
               </label>
               <textarea
                 onChange={(e) => setFdata({ ...fData, review: e.target.value })}
