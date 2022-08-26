@@ -55,7 +55,7 @@ const AllProduct = ({ products }) => {
                       {item.pName}
                     </div>
                   </div>
-                  <div>₹{item.pPrice}.00</div>
+                  <div>{item.pPrice} eth</div>
                 </div>
               </Fragment>
             );

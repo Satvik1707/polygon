@@ -200,13 +200,13 @@ const CheckoutProducts = ({ products }) => {
                     {product.pName}
                   </div>
                   <div className="md:ml-6 font-semibold text-black text-sm">
-                    Price : ₹{product.pPrice}.00{" "}
+                    Price : {product.pPrice}{" eth"}
                   </div>
                   <div className="md:ml-6 font-semibold text-black text-sm">
                     Quantitiy : {quantity(product._id)}
                   </div>
                   <div className="font-semibold text-black text-sm">
-                    Subtotal : ₹{subTotal(product._id, product.pPrice)}.00
+                    Subtotal : {subTotal(product._id, product.pPrice)} eth
                   </div>
                 </div>
               </div>

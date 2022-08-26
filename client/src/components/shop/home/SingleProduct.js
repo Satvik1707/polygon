@@ -73,7 +73,7 @@ const SingleProduct = (props) => {
                   </div>
                   <div className="card-footer flex items-center space-x-1">
                     <span>
-                      <div className="">₹{item.pPrice}.00</div>
+                      <div className="">{item.pPrice} eth</div>
                     </span>
                   </div>
                 </div>
