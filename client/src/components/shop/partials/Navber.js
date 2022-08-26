@@ -33,7 +33,7 @@ const Navber = (props) => {
         <div className="m-4 md:mx-12 md:my-6 grid grid-cols-4 lg:grid-cols-3">
           <div className="hidden lg:block col-span-1 flex">
               <span>
-                <img src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Ministry_of_Agriculture_India.svg/1200px-Ministry_of_Agriculture_India.svg.png' height = '150px' width = '150px'/>
+                <img src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Ministry_of_Agriculture_India.svg/1200px-Ministry_of_Agriculture_India.svg.png' alt = 'logo' height = '150px' width = '150px'/>
               </span>
           </div>
           <div className="col-span-2 lg:hidden flex justify-items-stretch	items-center">

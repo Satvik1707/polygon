@@ -6,7 +6,6 @@ import Web3 from "web3";
 import { cartListProduct } from "../partials/FetchApi";
 import { getBrainTreeToken, getPaymentProcess } from "./FetchApi";
 import { fetchData, fetchbrainTree, pay } from "./Action";
-import DropIn from "braintree-web-drop-in-react";
 
 const apiURL = process.env.REACT_APP_API_URL;
 
@@ -28,7 +27,7 @@ export const CheckoutComponent = (props) => {
     fetchbrainTree(getBrainTreeToken, setState);
 
     //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dispatch]);
 
   if (data.loading) {
     return (
@@ -133,19 +132,30 @@ export const CheckoutComponent = (props) => {
                           "No Metamask (or other Web3 Provider) installed"
                         );
                       }
-                      const paymentAddress =
-                        "0x192c96bfee59158441f26101b2db1af3b07feb40";
-                      const amountEth = 1;
+                      // const paymentAddress =
+                      //   "0x192c96bfee59158441f26101b2db1af3b07feb40";
+                      // const amountEth = 1;
                       web3.eth.getAccounts(function (error, result) {
                         web3.eth.sendTransaction(
                           {
-                            from: "0x69cE0e1c26BB8Fcc34FcF15D126f4B637Bfe718A",
-                            to: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+                            from: "0x8D3306ba4F0563D36F749261E6e59feaDcA306d6",
+                            to: "0x5b86d9432EB4A2A72175fC9747b7ceFBe539e4B1",
                             value: "10",
                             data: "0xdf",
                           },
                           function (err, transactionHash) {
                             if (!err) alert('Order placed success')
+                            if(transactionHash){
+                              pay(
+                                data,
+                                dispatch,
+                                state,
+                                setState,
+                                getPaymentProcess,
+                                totalCost,
+                                history
+                              )
+                            }
                           }
                         );
                       });
@@ -184,7 +194,7 @@ const CheckoutProducts = ({ products }) => {
                     onClick={(e) => history.push(`/products/${product._id}`)}
                     className="cursor-pointer md:h-20 md:w-20 object-cover object-center"
                     src={`${apiURL}/uploads/products/${product.pImages[0]}`}
-                    alt="wishListproduct"
+                    alt=""
                   />
                   <div className="text-lg md:ml-6 truncate">
                     {product.pName}
@@ -209,7 +219,5 @@ const CheckoutProducts = ({ products }) => {
     </Fragment>
   );
 };
-
-async function connectMetamask() {}
 
 export default CheckoutProducts;

@@ -11,7 +11,7 @@ import "./style.css";
 
 const Menu = () => {
   const { data, dispatch } = useContext(ProductDetailsContext);
-  const { data: layoutData } = useContext(LayoutContext);
+  // const { data: layoutData } = useContext(LayoutContext);
 
   return (
     <Fragment>

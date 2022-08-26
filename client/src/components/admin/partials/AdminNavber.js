@@ -17,7 +17,7 @@ const AdminNavber = (props) => {
         {/*  Large Screen Show  */}
         <div className="hidden lg:block lg:flex lg:items-center lg:space-x-4 mr-32">
           <span>
-          <img src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Ministry_of_Agriculture_India.svg/1200px-Ministry_of_Agriculture_India.svg.png' height = '150px' width = '150px'/>
+          <img src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Ministry_of_Agriculture_India.svg/1200px-Ministry_of_Agriculture_India.svg.png' alt = 'logo' height = '150px' width = '150px'/>
           </span>
         </div>
         {/*  Large Screen Show  */}
