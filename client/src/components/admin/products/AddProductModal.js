@@ -287,23 +287,6 @@ const AddProductDetail = ({ categories }) => {
                   id="quantity"
                 />
               </div>
-              {/* <div className="w-1/2 flex flex-col space-y-1">
-                <label htmlFor="offer">Product Offfer (%) *</label>
-                <input
-                  value={fData.pOffer}
-                  onChange={(e) =>
-                    setFdata({
-                      ...fData,
-                      error: false,
-                      success: false,
-                      pOffer: e.target.value,
-                    })
-                  }
-                  type="number"
-                  className="px-4 py-2 border focus:outline-none"
-                  id="offer"
-                />
-              </div> */}
             </div>
             <div className="flex flex-col space-y-1 w-full pb-4 md:pb-6 mt-4">
               <button

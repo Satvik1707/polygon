@@ -76,7 +76,7 @@ const AllProduct = (props) => {
           <thead>
             <tr>
               <th className="px-4 py-2 border">Product</th>
-              <th className="px-4 py-2 border">Description</th>
+              {/* <th className="px-4 py-2 border">Description</th> */}
               <th className="px-4 py-2 border">Stock</th>
               <th className="px-4 py-2 border">Category</th>
               <th className="px-4 py-2 border">Updated at</th>
@@ -125,9 +125,9 @@ const ProductTable = ({ product, deleteProduct, editProduct }) => {
         <td className="p-2 text-left">
           {product.pName}
         </td>
-        <td className="p-2 text-left">
+        {/* <td className="p-2 text-left">
           {product.pDescription.slice(0, 15)}...
-        </td>
+        </td> */}
         <td className="p-2 text-center">{product.pQuantity}</td>
         <td className="p-2 text-center">{product.pCategory.cName}</td>
         <td className="p-2 text-center">
