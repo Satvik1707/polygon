@@ -114,8 +114,7 @@ export const CheckoutComponent = (props) => {
                   </div>
 
                   <div
-                    type="button"
-                    
+                    type="button"                   
                     className="w-full px-4 py-2 text-center text-white font-semibold cursor-pointer"
                     style={{ background: "#303031" }}
                     onClick={async (e) => {
