@@ -1,0 +1,25 @@
+.detail{
+    box-shadow: 0 0 10px #000000;
+    background: antiquewhite;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.image{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-left: auto;
+    margin-right: 100px;
+}
+.content{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+img{
+    width: 366px;
+    height: 290px;
+}
