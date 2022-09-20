@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { getAllProduct } from "../../admin/products/FetchApi";
 import { HomeContext } from "./index";
+import { Container } from "react-bootstrap";
 
 const apiURL = process.env.REACT_APP_API_URL;
 
@@ -56,29 +57,33 @@ const SingleProduct = (props) => {
         products.map((item, index) => {
           return (
             <Fragment key={index}>
-              <div className="card-group">
-              <div className="card relative col-span-1 m-2 p-1 border w-auto h-100">
-                <img
-                  onClick={(e) => history.push(`/products/${item._id}`)}
-                  className="card-img-top w-full object-cover object-center cursor-pointer"
-                  src={`${apiURL}/uploads/products/${item.pImages[0]}`}
-                  alt=""
-                />
-                <div className="card-footer flex items-center justify-between mt-2">
-                  <div
-                    className="text-black truncate cursor-pointer"
-                    onClick={(e) => history.push(`/products/${item._id}`)}
-                  >
-                    {item.pName}
-                  </div>
-                  <div className="card-footer flex items-center space-x-1">
-                    <span>
-                      <div className="">{item.pPrice} eth</div>
-                    </span>
+              <Container>
+                {/* <Row> */}
+                <div className="card-group">
+                  <div className="card relative col-span-1 m-2 p-1 border w-auto h-100">
+                    <img
+                      onClick={(e) => history.push(`/products/${item._id}`)}
+                      className="card-img-top w-full object-cover object-center cursor-pointer"
+                      src={`${apiURL}/uploads/products/${item.pImages[0]}`}
+                      alt=""
+                    />
+                    <div className="card-footer flex items-center justify-between mt-2">
+                      <div
+                        className="text-black truncate cursor-pointer"
+                        onClick={(e) => history.push(`/products/${item._id}`)}
+                      >
+                        {item.pName}
+                      </div>
+                      <div className="card-footer flex items-center space-x-1">
+                        <span>
+                          <div className="">{item.pPrice} eth</div>
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              </div>
+                {/* </Row> */}
+              </Container>
             </Fragment>
           );
         })
